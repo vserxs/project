@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CityEye - Register</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+            
+            <div class="logo">
+            <img src="photo/logo.jpg" 
+                alt="CityEye Logo"></div>
+
+                <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="map.html">Map</a></li>
+                <li><a href="reports.html">Reports</a></li>
+                <li><a href="about.html">About the Team</a></li>
+                <li><a href="halloffame.html" class="hof">Hall of Fame</a></li>
+                </ul>
+            <ul class="right-links">
+    <li><a href="login.html" class="login-link">Log in</a></li>
+    <li><a href="report.html" class="report-button">Report a problem</a></li>
+    <li>
+        <button
+            id="change-background-btn"
+            type="button"
+            aria-label="Switch to dark mode"
+            aria-pressed="false"
+        >
+            <span id="theme-icon" aria-hidden="true">🌙</span>
+        </button>
+    </li>
+</ul>
+            </nav>
+
+
+    <main>
+
+        <div class="register-form">
+
+            <h1>SIGN UP</h1>
+
+            <form id="registerForm" novalidate>
+
+                <div class="gender-details">
+
+                    <label for="gender">Gender:</label>
+
+                    <select id="gender" name="gender" required>
+                        <option value="">Select Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+
+                </div>
+
+                    
+                <div class="name-details">
+
+                    <label for="username">Name:</label>
+                    <input type="text" id="name" name="username" required>
+                    <small class="error-msg" id="nameError"></small>
+
+                    <label for="surname">Surname:</label>
+                    <input type="text" id="surname" name="surname" required>
+                    <small class="error-msg" id="surnameError"></small>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    <small class="error-msg" id="emailError"></small>
+
+                </div>
+
+
+                <div class="city-details">
+
+                    <label for="city">City:</label>
+
+                    <select id="city" name="city" required>
+
+                        <option>Select City</option>
+                        <option value="astana">Astana</option>
+                        <option value="almaty">Almaty</option>
+                        <option value="shymkent">Shymkent</option>
+                        <option value="aktobe">Aktobe</option>
+                        <option value="karaganda">Karaganda</option>
+                        <option value="taraz">Taraz</option>
+                        <option value="pavlodar">Pavlodar</option>
+                        <option value="oskemen">Oskemen</option>
+                        <option value="semey">Semey</option>
+                        <option value="oral">Oral</option>
+                        <option value="atyrau">Atyrau</option>
+                        <option value="kostanay">Kostanay</option>
+                        <option value="kyzylorda">Kyzylorda</option>
+                        <option value="aktau">Aktau</option>
+                        <option value="petropavl">Petropavl</option>
+                        <option value="turkistan">Turkistan</option>
+                        <option value="kokshetau">Kokshetau</option>
+                        <option value="taldykorgan">Taldykorgan</option>
+                        <option value="zhezkazgan">Zhezkazgan</option>
+                        <option value="temirtau">Temirtau</option>
+                        <option value="ekibastuz">Ekibastuz</option>
+                        <option value="rudny">Rudny</option>
+                        <option value="kentau">Kentau</option>
+                        <option value="balkhash">Balkhash</option>
+                        <option value="satpayev">Satpayev</option>
+                        <option value="zhetisu">Zhetisu</option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="contact-details">
+
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" required>
+
+                </div>
+
+
+                <div class="dob-details">
+
+                    <label for="dob">Date of Birth:</label>
+                    <input type="date" id="dob" name="dob" required>
+
+                </div>
+
+
+                <div class="password-details">
+
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                    <small class="error-msg" id="passwordError"></small>
+
+                    <label for="confirm_password">Confirm Password:</label>
+                    <input type="password" id="confirm_password" name="confirm_password">
+                    <small class="error-msg" id="confirmPasswordError"></small>
+
+                </div>
+
+
+                <input type="submit" value="Register">
+
+            </form>
+
+        </div>
+
+    </main>
+
+
+    
+<footer>
+    <div class="cityeye-clock">
+        <span class="clock-label">Current Date and Time</span>
+        <time id="current-date-time">Loading...</time>
+    </div>
+
+    <p>Team members: Arsen Sagidanov, Alisher Balyasnyy</p>
+</footer>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>

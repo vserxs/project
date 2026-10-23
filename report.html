@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CityEye - Report a Problem</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+            
+            <div class="logo">
+            <img src="photo/logo.jpg" 
+                alt="CityEye Logo"></div>
+
+                <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="map.html">Map</a></li>
+                <li><a href="reports.html">Reports</a></li>
+                <li><a href="about.html">About the Team</a></li>
+                <li><a href="halloffame.html" class="hof">Hall of Fame</a></li>
+                </ul>
+            <ul class="right-links">
+    <li><a href="login.html" class="login-link">Log in</a></li>
+    <li><a href="report.html" class="report-button">Report a problem</a></li>
+    <li>
+        <button
+            id="change-background-btn"
+            type="button"
+            aria-label="Switch to dark mode"
+            aria-pressed="false"
+        >
+            <span id="theme-icon" aria-hidden="true">🌙</span>
+        </button>
+    </li>
+</ul>
+            </nav>
+
+
+    <main>
+
+        <form>
+
+            <div class="report-form">
+
+                <h1>Report a problem</h1>
+
+                <label for="problem_type">Problem type:</label>
+
+                <select id="problem_type" name="problem_type" required>
+                    <option value="">Select problem type</option>
+                    <option value="streetlight">Broken Streetlight</option>
+                    <option value="garbage">Garbage Issue</option>
+                    <option value="traffic">Traffic Problem</option>
+                    <option value="other">Other</option>
+                </select>
+
+                <br>
+
+                <label for="problem">Describe the problem:</label>
+
+                <textarea id="problem"
+                          name="problem"
+                          rows="5"
+                          cols="50"
+                          required></textarea>
+
+                <br>
+
+                <label for="location">Location:</label>
+
+                <input type="text"
+                       id="location"
+                       name="location"
+                       required>
+
+                <br>
+
+                <label for="photo">Upload Photo:</label>
+
+                <input type="file"
+                       id="photo"
+                       name="photo">
+
+                <br>
+
+                <input type="submit" value="Submit Report">
+
+            </div>
+
+        </form>
+
+    </main>
+
+
+    
+<footer>
+    <div class="cityeye-clock">
+        <span class="clock-label">Current Date and Time</span>
+        <time id="current-date-time">Loading...</time>
+    </div>
+
+    <p>Team members: Arsen Sagidanov, Alisher Balyasnyy</p>
+</footer>
+<script src="script.js"></script>
+
+</body>
+
+</html>

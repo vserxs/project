@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CityEye - Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="navbar">
+            
+            <div class="logo">
+            <img src="photo/logo.jpg" 
+                alt="CityEye Logo"></div>
+
+                <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="map.html">Map</a></li>
+                  <li><a href="reports.html">Reports</a></li>
+                <li><a href="about.html">About the Team</a></li>
+                <li><a href="halloffame.html" class="hof">Hall of Fame</a></li>
+                </ul>
+           
+<ul class="right-links">
+    <li><a href="login.html" class="login-link">Log in</a></li>
+    <li><a href="report.html" class="report-button">Report a problem</a></li>
+    <li>
+        <button
+            id="change-background-btn"
+            type="button"
+            aria-label="Switch to dark mode"
+            aria-pressed="false"
+        >
+            <span id="theme-icon" aria-hidden="true">🌙</span>
+        </button>
+    </li>
+</ul>
+</nav>
+<main>
+<div class="welcome">
+    <h1>Welcome to
+    <span class="city">City</span><span class="eye">Eye</span>!
+    </h1>
+    <h2>Do you see a <s>problem?</s>
+    <br>Make your city <em>better.</em>
+    </h2>
+    <p>Report your city's issues and track them until they are fixed.<br>These can include broken streetlights, garbage, and traffic problems.</p>
+    <p>Report problems and help imporve your city.</p>
+</div>
+
+
+<section class="problems-section">
+    <h2 style="text-align: center;">Common City Problems</h2>
+
+    <div class="problem-images">
+
+        <div class="problem-card">
+            <img src="photo/Pothole.jpeg" alt="Pothole in the road">
+            <div class="card-content">
+                <h3>Potholes</h3>
+                <p>Damaged roads can make travelling dangerous for drivers and pedestrians.</p>
+                <a href="report.html" class="card-btn">Report Problem</a>
+            </div>
+        </div>
+
+        <div class="problem-card">
+            <img src="photo/BrokenStreetLight.jpeg" alt="Broken street light">
+            <div class="card-content">
+                <h3>Broken Streetlights</h3>
+                <p>Broken streetlights make streets darker and less safe at night.</p>
+                <a href="report.html" class="card-btn">Report Problem</a>
+            </div>
+        </div>
+
+        <div class="problem-card">
+            <img src="photo/Garbage.jpeg" alt="Garbage on the street">
+            <div class="card-content">
+                <h3>Garbage</h3>
+                <p>Street litter makes public spaces dirty and unpleasant.</p>
+                <a href="report.html" class="card-btn">Report Problem</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<h2 id="main-title">How CityEye works</h2>
+<div align="center">
+ <ol type="1">
+    <li>See a problem in the city</li>
+    <li>Report the problem</li>
+    <li>Track the report</li>
+    <li>Wait until the problem is resolved</li>
+</ol>
+</div>
+<section class="faq-section" id="faq">
+    <h2>Frequently Asked Questions</h2>
+    <p class ="faq-description">
+        Find answers to common questions about CityEye.
+    </p>
+
+    <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+            What is CityEye?
+            <span class="faq-icon">+</span>
+        </button> 
+        <div class="faq-answer">
+            <div class="faq-answer-content">
+                CityEye is a website that helps people report
+                city problems and learn about local issues.
+            </div>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+            How can I report a problem?
+            <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+            <div class="faq-answer-content">
+                Open the Report a Problem page and fill out
+                the form with information about the issue.
+            </div>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+            Can I view reported problems?
+            <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+            <div class="faq-answer-content">
+                Yes. Visit the Reports page to see information
+                about reported city problems.
+            </div>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+            Why is CityEye useful?
+            <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+            <div class="faq-answer-content">
+                CityEye makes it easier for people to share
+                information about problems in their city.
+            </div>
+        </div>
+    </div>
+</section>
+
+<div style="text-align: center; margin: 40px 0;">
+            <button id="openPopupBtn" type="button" class="card-btn">Subscribe for Updates</button>
+        </div>
+
+        <div id="popupModal" class="modal-overlay">
+            <div class="modal-card">
+                <span id="closePopupBtn" class="close-btn">&times;</span>
+                <h2>Subscribe to CityEye</h2>
+                <p>Get notified when new issues in your area are fixed!</p>
+                <form id="subscribeForm">
+                    <input type="email" placeholder="Enter your email" required>
+                    <input type="submit" value="Subscribe">
+                </form>
+            </div>
+        </div>
+
+</main>
+
+
+<footer>
+    <div class="cityeye-clock">
+        <span class="clock-label">Current Date and Time</span>
+        <p id="current-time-display" class="date-display"></p>
+        <time id="current-date-time">Loading...</time>
+    </div>
+
+    <p>Team members: Arsen Sagidanov, Alisher Balyasnyy</p>
+</footer>
+<script src="script.js"></script>
+
+</body>
+</html>

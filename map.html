@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CityEye - Map</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+            
+            <div class="logo">
+            <img src="photo/logo.jpg" 
+                alt="CityEye Logo"></div>
+
+                <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="map.html">Map</a></li>
+                <li><a href="reports.html">Reports</a></li>
+                <li><a href="about.html">About the Team</a></li>
+                <li><a href="halloffame.html" class="hof">Hall of Fame</a></li>
+                </ul>
+            <ul class="right-links">
+    <li><a href="login.html" class="login-link">Log in</a></li>
+    <li><a href="report.html" class="report-button">Report a problem</a></li>
+    <li>
+        <button
+            id="change-background-btn"
+            type="button"
+            aria-label="Switch to dark mode"
+            aria-pressed="false"
+        >
+            <span id="theme-icon" aria-hidden="true">🌙</span>
+        </button>
+    </li>
+</ul>
+            </nav>
+
+
+    <main class="map-page">
+
+        <div class="map-title">
+            <h1>City Map</h1>
+            <p>Explore the city and find reported problems on the map.</p>
+        </div>
+
+
+        <div class="map">
+
+            <img src="photo/map.jpg"
+                 alt="City Map"
+                 class="map-image">
+
+
+            <div class="marker marker-red marker-1">●</div>
+
+            <div class="marker marker-yellow marker-2">●</div>
+
+            <div class="marker marker-green marker-3">●</div>
+
+            <div class="marker marker-red marker-4">●</div>
+
+            <div class="marker marker-yellow marker-5">●</div>
+
+
+            <div class="legend">
+
+                <span>
+                    <i class="red-dot"></i>
+                    New
+                </span>
+
+                <span>
+                    <i class="yellow-dot"></i>
+                    In Progress
+                </span>
+
+                <span>
+                    <i class="green-dot"></i>
+                    Resolved
+                </span>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+<footer>
+    <div class="cityeye-clock">
+        <span class="clock-label">Current Date and Time</span>
+        <time id="current-date-time">Loading...</time>
+    </div>
+
+    <p>Team members: Arsen Sagidanov, Alisher Balyasnyy</p>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
