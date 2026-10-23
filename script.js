@@ -152,3 +152,117 @@ const modal = document.getElementById('popupModal');
 
     let num = Math.floor(Math.random()*(999-99+1))+99;
     console.log(num)
+
+
+async function loadReportsFromBackend() {
+    const tableBody = document.getElementById("reports-table-body");
+
+    // Do nothing on pages without the reports table
+    if (!tableBody) return;
+
+    try {
+        const response = await fetch("http://localhost:8080/api/reports");
+
+        if (!response.ok) {
+            throw new Error("Failed to load reports");
+        }
+
+        const reports = await response.json();
+        tableBody.innerHTML = "";
+
+        if (reports.length === 0) {
+            tableBody.innerHTML =
+                '<tr><td colspan="5">No reports found.</td></tr>';
+            return;
+        }
+
+        reports.forEach((report) => {
+            const row = document.createElement("tr");
+
+            const values = [
+                report.id,
+                report.title,
+                report.description,
+                report.location,
+                report.status
+            ];
+
+            values.forEach((value, index) => {
+                const cell = document.createElement("td");
+                cell.textContent = value ?? "";
+
+                if (index === 4) {
+                    const status = String(report.status || "").toUpperCase();
+
+                    if (status === "NEW") {
+                        cell.className = "status-new";
+                    } else if (
+                        status === "IN_PROGRESS" ||
+                        status === "IN PROGRESS"
+                    ) {
+                        cell.className = "status-progress";
+                    } else if (
+                        status === "RESOLVED" ||
+                        status === "COMPLETED"
+                    ) {
+                        cell.className = "status-resolved";
+                    }
+                }
+
+                row.appendChild(cell);
+            });
+
+            tableBody.appendChild(row);
+        });
+    } catch (error) {
+        console.error("Error loading reports:", error);
+        tableBody.innerHTML =
+            '<tr><td colspan="5">Could not load reports. Make sure the Java backend is running.</td></tr>';
+    }
+}
+
+loadReportsFromBackend();
+
+
+const reportForm = document.getElementById("reportForm");
+
+if (reportForm) {
+    reportForm.addEventListener("submit", async function (event) {
+        event.preventDefault();
+
+        const titleSelect = document.getElementById("problem_type");
+        const descriptionInput = document.getElementById("problem");
+        const locationInput = document.getElementById("location");
+
+        const title = titleSelect.options[titleSelect.selectedIndex].text;
+
+        const report = {
+            title: title,
+            description: descriptionInput.value.trim(),
+            location: locationInput.value.trim(),
+            status: "NEW"
+        };
+
+        try {
+            const response = await fetch("http://localhost:8080/api/reports", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(report)
+            });
+
+            if (!response.ok) {
+                throw new Error("Could not submit report");
+            }
+
+            alert("Report submitted successfully!");
+
+            reportForm.reset();
+
+        } catch (error) {
+            console.error("Error submitting report:", error);
+            alert("Could not submit report. Make sure the Java backend is running.");
+        }
+    });
+}
