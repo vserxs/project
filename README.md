@@ -141,8 +141,8 @@ Maven Wrapper is included in the backend project.
 ### 1. Clone the repository
 
 ```bash
-git clone YOUR_GITHUB_REPOSITORY_URL
-cd YOUR_REPOSITORY_FOLDER
+git clone https://github.com/vserxs/project.git
+cd project
 ```
 
 Replace the placeholders with your actual GitHub repository URL and folder name.
